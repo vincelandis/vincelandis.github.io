@@ -1,96 +1,61 @@
 <html>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <title>Such Webpage</title>
-  <header>
-    <link rel="shortcut icon" href="images/favicon.ico">
-  </header>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>Vince Landis</title>
+    <link rel="icon" href="images/test.ico">
+  </head>
   <body>
-  <div id="contentArea">
-    <div id="buttonGroup">
-      <span id="menuTitle">Vince Landis, Developer</span>
-      <div class="menuButton" id="button1">Mobile Applications</div>
-      <div class="menuButton" id="button2">HTML5</div>
-      <div class="menuButton" id="button3">C++</div>
-      <div class="menuButton" id="button4">C</div>
-      <div class="menuButton" id="button5">About</div>
-      <div class="menuButton" id="button6">Java</div>
-      <div class="menuButton" id="button7">Contact Info</div>
-    </div>
-    <br class="clearBoth"/>
-    <div id="tabView">
-      <a target="_blank" href="https://play.google.com/store/apps/details?id=com.mike.vamoslionchariot&hl=en">
-        <div class="floatLeft appInfoLink1">Vamos! Lion for Android
-          <br />
-          <img src="images/vamosLogo.png"/>
-          <br />
-          <span class="floatRight smallerText">View in Google Play Store ></span>
-        </div>
-      </a>
-      <a target="_blank" href="https://play.google.com/store/">
-        <div class="floatLeft appInfoLink2">Pac-rush for Android
-          <br />
-          <img src="images/pac-rush.png"/>
-          <br />
-          <span class="floatRight smallerText">View in Google Play Store ></span>
-        </div>
+    <div id="titleBar">
+      <a href="index.html" title="Home">
+        Vincent Landis, Developer
       </a>
     </div>
-  </div>
+    <div id="contentArea">
+      color sampler<br/>
+      <div class="colorScheme color1"></div><br/>
+      <div class="colorScheme color2"></div><br/>
+      <div class="colorScheme color3"></div><br/>
+      <div class="colorScheme color4"></div><br/>
+      <div class="colorScheme color5"></div><br/>
+    </div>
   </body>
 </html>
 
 <style>
-a:visited {color: #9A5623;}
-a:link {color: black;}
-body {
-  background: url(images/background.png) top no-repeat;
-  background-attachment:fixed;
+.color1{background-color:#E6F2F9;}
+.color2{background-color:#93C6E6;}
+.color3{background-color:#419AD3;}
+.color4{background-color:#20628D;}
+.color5{background-color:#0D283A;}
+a:visited {
+  color: #93C6E6;
+  text-decoration: none;
 }
-#contentArea {
-  height: 1250px;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  margin-left: 6px;
-  margin-right: 6px;
-  background-color: white;
-  opacity: 0.75;
-  border-radius: 5px;
+a:link {
+  color: #93C6E6;
+  text-decoration: none;
+}
+body {
+  background-attachment:fixed;
+  background-color: #E6F2F9;
+  margin: 0px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-#menuTitle {
-  margin-top: 10px;
-  margin-left: 15px;
-  float: left;
-  color: #9A5623;
-  font-weight: 600;
+#titleBar {
+  background-color: #0D283A;
+  padding: 15px;
 }
-.menuButton {
-  margin-top: 10px;
-  margin-left: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  float: left;
-  height: 22px;
-  font-size: 15px;
-  background-color: #9A5623;
-  color: white;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
+.colorScheme {
+  width: 200px;
+  height: 40px;
 }
-#button1 {
-  height: 36px;
-  background: #FF541F;
+#contentArea {
+  background-color: white;
+  padding: 10px;
+  width: 200px;
 }
-#tabView {
-  height: 1200px;
-  margin-top: -8px;
-  margin-bottom: 14px;
-  margin-left: 6px;
-  margin-right: 6px;
-  background-color: #FF541F;
-  border-radius: 5px;
-}
+
+
 .appInfoLink1 {
   width: 350px;
   text-align: center;
@@ -132,12 +97,10 @@ body {
 .floatRight {float: right;}
 .floatLeft {float: left;}
 .clearBoth {clear: both;}
-.smallerText {font-size: smaller;}
 </style>
 
 <script>
-var buttonCount = 7;
-var defaultButtonColor = "#9A5623";
+/*
 
 document.addEventListener("DOMContentLoaded", function() {
   
@@ -147,15 +110,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 }, false);
 
-function chooseMenuTab(e) {
-  var buttonNum = e.target.id.charAt(6);
-
-  for (var i = "1"; i <= buttonCount.toString(); i++) {
-    var newColor = (buttonNum == i) ? "#FF541F" : defaultButtonColor;
-    var newHeight = (buttonNum == i) ? 36 : 22;
-    
-    document.getElementById("button" + i).style.backgroundColor = newColor;
-    document.getElementById("button" + i).style.height = newHeight;
-  }
-}
+*/
 </script>
