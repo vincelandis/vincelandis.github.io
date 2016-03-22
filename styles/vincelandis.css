@@ -1,0 +1,133 @@
+.color1{background-color:#E6F2F9;}
+.color2{background-color:#93C6E6;}
+.color3{background-color:#419AD3;}
+.color4{background-color:#20628D;}
+.color5{background-color:#0D283A;}
+a:visited {
+  color: #93C6E6;
+  text-decoration: none;
+}
+a:link {
+  color: #93C6E6;
+  text-decoration: none;
+}
+body {
+  background-attachment:fixed;
+  background-color: #E6F2F9;
+  color: #0D283A;
+  margin: 0px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.largeText {
+  color: #E6F2F9;
+  font-size: 20px;
+}
+.mediumText {
+  font-size: 16px;
+}
+#titleBar {
+  background-color: #0D283A;
+  height: 50px;
+}
+#pageTitle {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 13px;
+  height: 24px;
+  width: 275px;
+  float: left;
+}
+.menuTab {
+  padding: 16px;
+  height: 18px;
+}
+.menuTab:hover {
+  background-color: #20628D;
+}
+.menuTab:active {
+  background-color: #419AD3;
+}
+.spacer {
+  width: 1px;
+  height: 44px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+#searchCase {
+  height: 36px;
+  width: 200px;
+  margin: 7px;
+  border-radius: 18px;
+}
+#innerCase {
+  height: 28px;
+  width: 192px;
+  margin: 4px;
+  border-radius: 14px;
+}
+#searchBar {
+  height: 24px;
+  width: 160px;
+  margin-top: 2px;
+  margin-left: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+#searchBar:before {
+  content: '\e802';
+}
+
+.colorScheme {
+  width: 200px;
+  height: 40px;
+}
+.contentArea {
+  margin: 40px;
+  background-color: white;
+  padding: 10px;
+  width: 200px;
+}
+
+
+.appInfoLink1 {
+  width: 350px;
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 20px;
+  clear: both;
+  background: white;
+  color: black;
+  cursor: pointer;
+  float: left;
+  border-radius: 8px;
+}
+.appInfoLink2 {
+  width: 350px;
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 20px;
+  clear: both;
+  background: black;
+  color: white;
+  cursor: pointer;
+  float: left;
+  border-radius: 8px;
+}
+.gradientHoriz {
+  background: -webkit-linear-gradient(left, purple, black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, purple, black);     /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, purple, black);   /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, purple, black);     /* Standard syntax */
+  height: 50px;
+}
+.gradientVertical {
+  background: -webkit-linear-gradient(black, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, white);      /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, white);    /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, white);         /* Standard syntax */
+}
+.highlighted {background: #FF541F;}
+.floatRight {float: right;}
+.floatLeft {float: left;}
+.clearBoth {clear: both;}

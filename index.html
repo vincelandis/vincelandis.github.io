@@ -1,114 +1,53 @@
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Vince Landis</title>
-    <link rel="icon" href="images/test.ico">
+    <link rel="icon" href="images/vincelandis.ico">
+    
+    <link rel="stylesheet" type="text/css" href="styles/vincelandis.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/vincelandis.js"></script>
   </head>
   <body>
     <div id="titleBar">
-      <a href="index.html" title="Home">
-        Vincent Landis, Developer
+      <div id="pageTitle">
+        <a href="index.html" title="Home">
+          <span class="largeText">Vincent Landis, Developer</span>
+        </a>
+      </div>
+      <div class="spacer floatLeft color1"></div>
+      <a href="blog_home" title="Life, as I know it" class="mediumText menuTab floatLeft">
+        Blog
       </a>
+      <div class="spacer floatLeft color1"></div>
+      <a href="code_examples" title="Coding projects showcase" class="mediumText menuTab floatLeft">
+        Code Showcase
+      </a>
+      <div class="spacer floatLeft color1"></div>
+      <a href="mobile_apps" title="Mobile Applications" class="mediumText menuTab floatLeft">
+        Mobile Apps
+      </a>
+      <div class="spacer floatLeft color1"></div>
+      <a href="contact_info" title="Get in touch with me" class="mediumText menuTab floatLeft">
+        Contact Info
+      </a>
+      <div class="spacer floatLeft color1"></div>
+      <div id="searchCase" class="color3 floatRight">
+        <div id="innerCase" class="color1">
+          <input id="searchBar" class="color1" placeholder="Search this site"/>
+        </div>
+      </div>
     </div>
-    <div id="contentArea">
-      color sampler<br/>
+    <div class="contentArea">
+      This site is currently under construction.<br/>
+      Please come back later!
+    </div>
+    <div class="contentArea">
+      color sampler<br/><br/>
       <div class="colorScheme color1"></div><br/>
       <div class="colorScheme color2"></div><br/>
       <div class="colorScheme color3"></div><br/>
       <div class="colorScheme color4"></div><br/>
-      <div class="colorScheme color5"></div><br/>
+      <div class="colorScheme color5"></div>
     </div>
   </body>
 </html>
-
-<style>
-.color1{background-color:#E6F2F9;}
-.color2{background-color:#93C6E6;}
-.color3{background-color:#419AD3;}
-.color4{background-color:#20628D;}
-.color5{background-color:#0D283A;}
-a:visited {
-  color: #93C6E6;
-  text-decoration: none;
-}
-a:link {
-  color: #93C6E6;
-  text-decoration: none;
-}
-body {
-  background-attachment:fixed;
-  background-color: #E6F2F9;
-  margin: 0px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#titleBar {
-  background-color: #0D283A;
-  padding: 15px;
-}
-.colorScheme {
-  width: 200px;
-  height: 40px;
-}
-#contentArea {
-  background-color: white;
-  padding: 10px;
-  width: 200px;
-}
-
-
-.appInfoLink1 {
-  width: 350px;
-  text-align: center;
-  margin-left: 25px;
-  margin-top: 20px;
-  clear: both;
-  background: white;
-  color: black;
-  cursor: pointer;
-  float: left;
-  border-radius: 8px;
-}
-.appInfoLink2 {
-  width: 350px;
-  text-align: center;
-  margin-left: 25px;
-  margin-top: 20px;
-  clear: both;
-  background: black;
-  color: white;
-  cursor: pointer;
-  float: left;
-  border-radius: 8px;
-}
-.gradientHoriz {
-  background: -webkit-linear-gradient(left, purple, black); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, purple, black);     /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, purple, black);   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, purple, black);     /* Standard syntax */
-  height: 50px;
-}
-.gradientVertical {
-  background: -webkit-linear-gradient(black, white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(black, white);      /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(black, white);    /* For Firefox 3.6 to 15 */
-  background: linear-gradient(black, white);         /* Standard syntax */
-}
-.highlighted {background: #FF541F;}
-.floatRight {float: right;}
-.floatLeft {float: left;}
-.clearBoth {clear: both;}
-</style>
-
-<script>
-/*
-
-document.addEventListener("DOMContentLoaded", function() {
-  
-  for (var i = 1; i <= buttonCount; i++) {
-    document.getElementById("button" + i).addEventListener("click", chooseMenuTab, false);
-  }
-
-}, false);
-
-*/
-</script>
