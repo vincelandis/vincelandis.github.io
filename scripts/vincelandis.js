@@ -1,11 +1,11 @@
-/*
-
 document.addEventListener("DOMContentLoaded", function() {
   
-  for (var i = 1; i <= buttonCount; i++) {
-    document.getElementById("button" + i).addEventListener("click", chooseMenuTab, false);
-  }
+   document.getElementById("searchBar").addEventListener("keyup", searchSite, false);
 
 }, false);
 
-*/
+function searchSite(e) {
+   if (e.keyCode == "13") {
+      document.getElementById("searchBar").value = "Nahh";
+   }
+}
