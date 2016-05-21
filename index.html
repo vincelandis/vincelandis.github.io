@@ -2,39 +2,25 @@
   <head>
     <title>Vince Landis</title>
     <link rel="icon" href="images/vincelandis.ico">
-    
+
     <link rel="stylesheet" type="text/css" href="styles/vincelandis.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/contacts.jsonp"></script>
     <script src="scripts/vincelandis.js"></script>
   </head>
-  <body>
+  <body class="z0">
     <div id="titleBar">
       <div id="pageTitle">
-        <a href="index.html" title="Home">
+        <a href="index.html" id="homeLink">
           <span class="largeText">Vincent Landis, Developer</span>
         </a>
       </div>
-      <div class="spacer floatLeft color1"></div>
-      <a href="blog_home.html" title="Life, as I know it" class="mediumText menuTab floatLeft">
-        Blog
+      <div class="spacer floatLeft"></div>
+      <a href="devTools.html" title="Best resources for Web Development" class="mediumText menuTab floatLeft">
+        Developer Tools
       </a>
-      <div class="spacer floatLeft color1"></div>
-      <a href="code_examples.html" title="Coding projects showcase" class="mediumText menuTab floatLeft">
-        Code Showcase
-      </a>
-      <div class="spacer floatLeft color1"></div>
-      <a href="mobile_apps.html" title="Mobile applications & works in progress" class="mediumText menuTab floatLeft">
-        Mobile Projects
-      </a>
-      <div class="spacer floatLeft color1"></div>
-      <a href="contact_info.html" title="Get in touch with me" class="mediumText menuTab floatLeft">
-        Contact Info
-      </a>
-      <div class="spacer floatLeft color1"></div>
-      <a href="lot83.html" title="Get in touch with me" class="mediumText menuTab floatLeft">
-        Lot 83
-      </a>
-      <div class="spacer floatLeft color1"></div>
+      <div class="spacer floatLeft"></div>
+      
       <div id="searchCase" class="color3 floatRight">
         <div id="innerCase" class="color1">
           <input id="searchBar" class="color1 floatLeft" placeholder="Search this site"/>
@@ -42,13 +28,13 @@
         </div>
       </div>
     </div>
-    
-      <div class="warning">
-        This site is currently under construction.
-        Please come back later for more information &#128515;
-        <strong class="dismiss_cross floatRight">&#215;</strong>
-      </div>
-    
+    <div id="socialMediaPopup"></div>
+
+    <div class="warning">
+      This site is currently under construction.
+      Please come back later for more information &#128515;
+      <strong class="dismiss_cross floatRight">&#215;</strong>
+    </div>
     <div id="displayArea" class="color2">
       <div class="contentArea floatLeft">
         color sampler<br/><br/>
@@ -59,5 +45,6 @@
         <div class="colorScheme color5"></div>
       </div>
     </div>
+
   </body>
 </html>

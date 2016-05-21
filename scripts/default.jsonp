@@ -1,0 +1,13 @@
+infos = [
+
+{
+  key: "value",
+  nextKey: "nextvalue"
+},
+
+{
+  key: "value",
+  nextKey: "nextvalue"
+}
+
+];

@@ -1,0 +1,45 @@
+contacts = [
+
+{
+  title: "facebook",
+  link: "https://www.facebook.com/vinselandis",
+  image: "images/facebook.png"
+},
+
+{
+  title: "LinkedIn",
+  link: "https://www.linkedin.com/in/vincelandis",
+  image: "images/linkedIn.png"
+},
+
+{
+  title: "Instagram",
+  link: "https://www.instagram.com/vincelandis/",
+  image: "images/instagram.png"
+},
+
+{
+  title: "Twitter",
+  link: "https://twitter.com/vincelandis",
+  image: "images/twitter.png"
+},
+
+{
+  title: "Github",
+  link: "https://github.com/vincelandis",
+  image: "images/github.png"
+},
+
+{
+  title: "Youtube",
+  link: "https://www.youtube.com/channel/UCeuVLEfiyHp199y8WsIUubg",
+  image: "images/youtube.png"
+},
+
+{
+  title: "Gmail",
+  link: "mailto:vincelandis@gmail.com",
+  image: "images/gmail.ico"
+}
+
+];
