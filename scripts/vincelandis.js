@@ -1,5 +1,6 @@
 var warnings;                    // red box displays warning user
 var dismissers;                  // x keys to dismiss warnings
+var windowSize;
 
 var contactList = contacts.slice(0);
 
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function()
    resizeResults();
    
    document.getElementById("searchBar").addEventListener("keyup", respondKeyInput, false);
-   document.getElementById("magnifying-glass").addEventListener("click", searchSite, false);
+   document.getElementById("magnifying-glass").addEventListener("click", chainSearch, false);
    document.getElementById("homeLink").addEventListener("mouseover", displaySocialMedia, false);
    document.body.addEventListener("click", hideSocialMedia, false);
    
@@ -37,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function()
       
       arrow = document.createElement("div");
       arrow.className = "popupArrow";
-      arrow.marginLeft = (width / 2).toString() + "px";console.log((width/2).toString() + "px");
       
       popup.appendChild(arrow);
       
@@ -75,17 +75,34 @@ function respondKeyInput(e)
       searchSite();
 }
 
+function chainSearch(){searchSite();}
 // searches entire website (Google custom search? links to tabs?)
+// TODO: why doesn't clicking magnifying glass change display/visibility properties?
 function searchSite()
 {
    document.getElementById("searchBar").value = "Nahh";
+   document.getElementById("displayArea").style.display = "none";
+   document.getElementById("searchArea").style.display = "block";
 }
 
 // resizes display area according to window size
 // TODO: fix title bar when window becomes very narrow
 function resizeResults()
 {
-  document.getElementById("displayArea").style.width = window.innerWidth - 80;
+   var content, menu, menuWidth = 200;
+   
+   menu = document.getElementById("menuSide");
+   content = document.getElementById("contentSide");
+   
+   windowSize = window.innerWidth - 60;
+   
+   document.getElementById("displayArea").style.width = windowSize;
+   
+   if (menu != null)
+      menu.style.width = menuWidth;
+   if (content != null)
+      content.style.width = windowSize - menuWidth;
+   
 }
 
 // dismisses warning corresponding to event trigger

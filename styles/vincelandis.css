@@ -65,6 +65,10 @@ code
   padding: 10px;
   box-shadow: 4px 4px 2px #0D283A;
 }
+#contentSide
+{
+   margin-bottom: 30px;
+}
 #dataTable
 {
   margin: 0 auto;
@@ -72,8 +76,7 @@ code
 }
 #displayArea
 {
-   width: 300px;
-   margin: 40px;
+   margin: 30px;
 }
 .dismiss_cross
 {
@@ -143,6 +146,18 @@ code
 {
   font-size: 16px;
 }
+.menuOption
+{
+   padding: 8px;
+   color: #E6F2F9;
+   font-size: 15px;
+   text-align: center;
+   cursor: pointer;
+}
+.menuOption:hover
+{
+   background: #20628D;
+}
 .menuTab
 {
   padding: 16px;
@@ -204,6 +219,11 @@ code
    border-left: 13px solid transparent;
    border-right: 13px solid transparent;
 }
+#searchArea
+{
+   margin: 30px;
+   display: none;
+}
 #searchBar
 {
   height: 24px;
@@ -238,6 +258,14 @@ code
   background-color: #0D283A;
   height: 50px;
   box-shadow: 0px 3px 2px #419AD3;
+}
+#toolSpace
+{
+   width: 90%;
+   height: 500px;
+   margin: 5%;
+   border-radius: 4px;
+   box-shadow: 5px 5px 3px #0D283A;
 }
 .warning
 {
