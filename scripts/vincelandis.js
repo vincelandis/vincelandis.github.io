@@ -90,7 +90,11 @@ document.addEventListener("DOMContentLoaded", function()
 
    $("#convertButton").click(function()
    {
-      convertValue(document.getElementById("input").value, $("#inType").val(), $("#outType").val());
+      // todo: sanitize input to remove newlines
+      input = document.getElementById("input").value;
+
+      if (input != "")
+         convertValue(input, $("#inType").val(), $("#outType").val());
    });
    
 }, false);
@@ -160,44 +164,16 @@ function convertValue(inputVal, inputMode, outputMode)
 
    if (inputMode == outputMode)
    {
-      output = inputVal + " (they match, yo)";
+      output = inputVal + "\n(input and output type are identical)";
    }
    else
    {
-      console.log(inputVal);
-      switch (parseInt(inputMode))
+      var base = parseInt(inputMode);
+      switch (base)
       {
-         case 0: // ascii
-            break;
-         case 1: // binary
-            var copy = parseFloat(inputVal);
-            
-            if (isNaN(copy))
-            {
-               err = true;
-            }
-            else
-            {
-               var m = 0;               // multiplier
-
-               while (copy > 0 && !err) // check if input is binary
-               {
-                  if (copy % 10 > 1) // if remainder isn't 1 or 0, input isn't binary
-                  {
-                     err = true;
-                  }
-                  else
-                  {
-                     actualVal += Math.pow(2, m) * (copy % 10);
-                     m++;
-                     copy = parseInt(copy / 10);
-                  }
-               }
-
-            }
-
-            break;
-         case 2: // octal
+         case 2: // binary
+         case 4: // quaternary
+         case 8: // octal
             var copy = parseFloat(inputVal);
             
             if (isNaN(copy))
@@ -210,13 +186,13 @@ function convertValue(inputVal, inputMode, outputMode)
 
                while (copy > 0 && !err) // check if input is valid
                {
-                  if (copy % 10 > 7) // if remainder is 8 or 9, input isn't octal
+                  if (copy % 10 > base - 1)    // if remainder is 8 or 9, input isn't octal
                   {
                      err = true;
                   }
                   else
                   {
-                     actualVal += Math.pow(8, m) * (copy % 10);
+                     actualVal += Math.pow(base, m) * (copy % 10);
                      m++;
                      copy = parseInt(copy / 10);
                   }
@@ -225,8 +201,35 @@ function convertValue(inputVal, inputMode, outputMode)
             }
 
             break;
-         case 4: // hex
+
+         case 16: // hex
+            var copy = inputVal.toString();
+            var m = copy.length - 1;               // multiplier
+
+            for (var i = 0; i < copy.length && !err; i++, m--)
+            {
+               var j = copy.charAt(i);
+
+               if (j <= '0' && j >= '9' || j < 10 && j > -1)
+               {
+                  actualVal += Math.pow(16, m) * parseInt(j);
+               }
+               else if (j >= 'a' && j <= 'f')
+               {
+                  actualVal += Math.pow(16, m) * (j.charCodeAt(0) - 87);
+               }
+               else if (j >= 'A' && j <= 'F')
+               {
+                  actualVal += Math.pow(16, m) * (j.charCodeAt(0) - 54);
+               }
+               else
+               {
+                  err = true;
+               }
+            }
+
             break;
+
          default: // value interpreted as decimal value
             actualVal = parseFloat(inputVal);
 
@@ -240,16 +243,37 @@ function convertValue(inputVal, inputMode, outputMode)
       }
       else
       {
-         switch (parseInt(outputMode))
-         {
-            case 0: // ascii
-               break;
-            case 1: // binary
+         var m = 0;
+         var base = parseInt(outputMode);
+         output = 0;
 
+         switch (base)
+         {
+            case 2: // binary
+            case 4: // quaternary
+            case 8: // octal
+               while (actualVal > 0)
+               {
+                  output += Math.pow(10, m) * (actualVal % base);
+                  actualVal = parseInt(actualVal / base);
+                  m++;
+               }
                break;
-            case 2: // octal
-               break;
-            case 4: // hex
+            case 16: // hex
+               output = "";
+
+               while (actualVal > 0)
+               {
+                  var next_digit = actualVal % base;
+                  
+                  if (next_digit > 9)
+                     output = String.fromCharCode(next_digit + 87) + output;
+                  else
+                     output = next_digit.toString() + output;
+
+                  actualVal = parseInt(actualVal / base);
+                  m++;
+               }
                break;
             default:
                output = actualVal;
