@@ -1,6 +1,9 @@
+$ = jQuery;
 var warnings;                    // red box displays warning user
 var dismissers;                  // x keys to dismiss warnings
 var windowSize;
+
+var CONVERSION_ERROR = "There was an error converting the value.\nMake sure the correct input type is selected.";
 
 var contactList = contacts.slice(0);
 
@@ -66,6 +69,30 @@ document.addEventListener("DOMContentLoaded", function()
       socialMediaPopup.appendChild(popup);
    }
    
+   $(".menuOption").click(function(e) {
+	   var menuOptions = document.getElementsByClassName("menuOption");
+      var newColor = "color1";
+      
+      for (var i = 0; i < menuOptions.length; i++)
+      {
+         if (e.target == menuOptions[i])
+         {
+            newColor = "color2";
+         }
+         else
+         {
+            newColor = "color3";
+         }
+         
+         menuOptions[i].className = "menuOption " + newColor;
+      }
+   });
+
+   $("#convertButton").click(function()
+   {
+      convertValue(document.getElementById("input").value, $("#inType").val(), $("#outType").val());
+   });
+   
 }, false);
 
 // event handler for search bar
@@ -80,7 +107,7 @@ function chainSearch(){searchSite();}
 // TODO: why doesn't clicking magnifying glass change display/visibility properties?
 function searchSite()
 {
-   document.getElementById("searchBar").value = "Nahh";
+   document.getElementById("searchBar").value = "Not found";
    document.getElementById("displayArea").style.display = "none";
    document.getElementById("searchArea").style.display = "block";
 }
@@ -123,4 +150,112 @@ function displaySocialMedia()
 function hideSocialMedia()
 {
    document.getElementById("smlinks").style.visibility = "hidden";
+}
+
+function convertValue(inputVal, inputMode, outputMode)
+{
+   var actualVal = 0; // the "actual" decimal value of the input string
+   var output;
+   var err = false;
+
+   if (inputMode == outputMode)
+   {
+      output = inputVal + " (they match, yo)";
+   }
+   else
+   {
+      console.log(inputVal);
+      switch (parseInt(inputMode))
+      {
+         case 0: // ascii
+            break;
+         case 1: // binary
+            var copy = parseFloat(inputVal);
+            
+            if (isNaN(copy))
+            {
+               err = true;
+            }
+            else
+            {
+               var m = 0;               // multiplier
+
+               while (copy > 0 && !err) // check if input is binary
+               {
+                  if (copy % 10 > 1) // if remainder isn't 1 or 0, input isn't binary
+                  {
+                     err = true;
+                  }
+                  else
+                  {
+                     actualVal += Math.pow(2, m) * (copy % 10);
+                     m++;
+                     copy = parseInt(copy / 10);
+                  }
+               }
+
+            }
+
+            break;
+         case 2: // octal
+            var copy = parseFloat(inputVal);
+            
+            if (isNaN(copy))
+            {
+               err = true;
+            }
+            else
+            {
+               var m = 0;               // multiplier
+
+               while (copy > 0 && !err) // check if input is valid
+               {
+                  if (copy % 10 > 7) // if remainder is 8 or 9, input isn't octal
+                  {
+                     err = true;
+                  }
+                  else
+                  {
+                     actualVal += Math.pow(8, m) * (copy % 10);
+                     m++;
+                     copy = parseInt(copy / 10);
+                  }
+               }
+
+            }
+
+            break;
+         case 4: // hex
+            break;
+         default: // value interpreted as decimal value
+            actualVal = parseFloat(inputVal);
+
+            if (isNaN(actualVal)) 
+               err = true;
+      }
+
+      if (err)
+      {
+         output = CONVERSION_ERROR;
+      }
+      else
+      {
+         switch (parseInt(outputMode))
+         {
+            case 0: // ascii
+               break;
+            case 1: // binary
+
+               break;
+            case 2: // octal
+               break;
+            case 4: // hex
+               break;
+            default:
+               output = actualVal;
+         }  
+      }
+   }
+
+   $("#output").html(output);
 }

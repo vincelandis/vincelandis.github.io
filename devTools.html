@@ -35,33 +35,34 @@
       <div id="menuSide" class="color3 floatLeft">
         <div class="menuOption color2">Number conversion</div>
         <div class="menuOption">Color picker</div>
-        <div class="menuOption">Unicoder</div>
+        <div class="menuOption">Unicode Characters</div>
+        <div class="menuOption">CSS Shape generator</div>
       </div>
       <div id="contentSide" class="color2 floatLeft">
         <div id="toolSpace" class="color3">
           <span class="toolText">input type: </span>
-          <select>
-            <option>hex</option>
-            <option>binary</option>
-            <option>octal</option>
-            <option>ASCII</option>
-            <option>decimal</option>
+          <select id="inType">
+            <option value="0">ASCII</option>
+            <option value="1">binary</option>
+            <option value="2">octal</option>
+            <option value="3">decimal</option>
+            <option value="4">hex</option>
           </select>
           <br />
-          <input class="toolTextBox" type="text"/>
+          <textarea id="input" class="toolTextBox" type="text"></textarea>
           <br />
-          <button>Convert</button>
+          <button id="convertButton">Convert</button>
           <br />
           <span class="toolText">output type: </span>
-          <select>
-            <option>ASCII</option>
-            <option>hex</option>
-            <option>binary</option>
-            <option>octal</option>
-            <option>decimal</option>
+          <select id="outType">
+            <option value="0">ASCII</option>
+            <option value="1">binary</option>
+            <option value="2">octal</option>
+            <option value="3">decimal</option>
+            <option value="4">hex</option>
           </select>
           <br />
-          <input class="toolTextBox" type="text"/>
+          <textarea id="output" class="toolTextBox" type="text"></textarea>
           <br />
         </div>
       </div>

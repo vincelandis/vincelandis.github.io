@@ -1,12 +1,12 @@
-.color1{ background-color: #E6F2F9; }
-.color2{ background-color: #93C6E6; }
-.color3{ background-color: #419AD3; }
-.color4{ background-color: #20628D; }
-.color5{ background-color: #0D283A; }
+.color1 { background-color: #E6F2F9; }
+.color2 { background-color: #93C6E6; }
+.color3 { background-color: #419AD3; }
+.color4 { background-color: #20628D; }
+.color5 { background-color: #0D283A; }
 
-.floatRight{ float: right; }
-.floatLeft{ float: left; }
-.clearBoth{ clear: both; }
+.floatRight { float: right; }
+.floatLeft { float: left; }
+.clearBoth { clear: both; }
 
 a:visited
 {
@@ -268,9 +268,10 @@ code
    -webkit-appearance: textarea;
    white-space: pre-wrap;
    background: #E6F2F9;
-   height: 100px;
    width: 50%;
-   font-size: large;
+   font-size: medium;
+   padding: 10px 10px 80px 10px;
+   margin: 5px 0;
 }
 #toolSpace
 {
