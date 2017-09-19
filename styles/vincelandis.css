@@ -118,6 +118,10 @@ code
   margin: 4px;
   border-radius: 14px;
 }
+input, textarea, select, button
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
 .largeText
 {
   color: #E6F2F9;
@@ -250,6 +254,7 @@ code
 }
 #searchCase
 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   height: 36px;
   width: 200px;
   margin: 7px;
@@ -286,7 +291,6 @@ code
 #toolSpace
 {
    width: 80%;
-   height: 500px;
    margin: 5%;
    padding: 5%;
    border-radius: 4px;

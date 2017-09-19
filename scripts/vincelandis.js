@@ -111,7 +111,6 @@ function chainSearch(){searchSite();}
 // TODO: why doesn't clicking magnifying glass change display/visibility properties?
 function searchSite()
 {
-   document.getElementById("searchBar").value = "Not found";
    document.getElementById("displayArea").style.display = "none";
    document.getElementById("searchArea").style.display = "block";
 }
@@ -158,7 +157,7 @@ function hideSocialMedia()
 
 function convertValue(inputVal, inputMode, outputMode)
 {
-   var actualVal = 0; // the "actual" decimal value of the input string
+   var actualVal = 0; // the decimal value of the input string
    var output;
    var err = false;
 
