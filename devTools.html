@@ -34,36 +34,50 @@
     <div id="displayArea">
       <div id="menuSide" class="color3 floatLeft">
         <div class="menuOption color2">Number conversion</div>
+        <div class="menuOption">CSS Shape generator</div>
         <div class="menuOption">Color picker</div>
         <div class="menuOption">Unicode Characters</div>
-        <div class="menuOption">CSS Shape generator</div>
       </div>
       <div id="contentSide" class="color2 floatLeft">
-        <div id="toolSpace" class="color3">
-          <span class="toolText">input type: </span>
-          <select id="inType">
-            <option value="2">binary</option>
-            <option value="4">quaternary</option>
-            <option value="8">octal</option>
-            <option value="10">decimal</option>
-            <option value="16">hex</option>
-          </select>
-          <br />
-          <textarea id="input" class="toolTextBox" type="text"></textarea>
-          <br />
-          <button id="convertButton" class="button color2">Convert</button>
-          <br />
-          <span class="toolText">output type: </span>
-          <select id="outType">
-            <option value="2">binary</option>
-            <option value="4">quaternary</option>
-            <option value="8">octal</option>
-            <option selected=true value="10">decimal</option>
-            <option value="16">hex</option>
-          </select>
-          <br />
-          <textarea id="output" class="toolTextBox" type="text"></textarea>
-          <br />
+        <div id="toolSpace">
+
+          <div id="numberConversion" class="tool">
+            <span class="toolText">input type: </span>
+            <select id="inType">
+              <option value="2">binary</option>
+              <option value="4">quaternary</option>
+              <option value="8">octal</option>
+              <option value="10">decimal</option>
+              <option value="16">hex</option>
+            </select>
+            <br />
+            <textarea id="input" class="toolTextBox" type="text"></textarea>
+            <br />
+            <button id="convertButton" class="button color2">Convert</button>
+            <br />
+            <span class="toolText">output type: </span>
+            <select id="outType">
+              <option value="2">binary</option>
+              <option value="4">quaternary</option>
+              <option value="8">octal</option>
+              <option selected=true value="10">decimal</option>
+              <option value="16">hex</option>
+            </select>
+            <br />
+            <textarea id="output" class="toolTextBox" type="text"></textarea>
+            <br />
+          </div>
+
+          <div id="shapeGenerator" class="tool hidden">
+            <div id="shapesTabBar">
+              <div class="shapeTab">Circle</div>
+              <div class="shapeTab">Triangle</div>
+              <div class="shapeTab">Heart</div>
+            </div>
+            <div id="shapesArea">
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

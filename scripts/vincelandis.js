@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function()
    
    $(".menuOption").click(function(e) {
 	   var menuOptions = document.getElementsByClassName("menuOption");
+      var tools = document.getElementsByClassName("tool");
       var newColor = "color1";
       
       for (var i = 0; i < menuOptions.length; i++)
@@ -78,10 +79,12 @@ document.addEventListener("DOMContentLoaded", function()
          if (e.target == menuOptions[i])
          {
             newColor = "color2";
+            tools[i].style.display = "block";
          }
          else
          {
             newColor = "color3";
+            tools[i].style.display = "none";
          }
          
          menuOptions[i].className = "menuOption " + newColor;

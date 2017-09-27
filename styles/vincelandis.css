@@ -111,6 +111,10 @@ code
   background: -moz-linear-gradient(black, white);    /* For Firefox 3.6 to 15 */
   background: linear-gradient(black, white);         /* Standard syntax */
 }
+.hidden
+{
+  display: none;
+}
 #innerCase
 {
   height: 28px;
@@ -260,6 +264,27 @@ input, textarea, select, button
   margin: 7px;
   border-radius: 18px;
 }
+.shapeTab
+{
+  background-color: #93C6E6;
+  color: #E6F2F9;
+  padding: 0 15px;
+  margin: 1px;
+  border-radius: 2px;
+  float: left;
+  cursor: pointer;
+}
+#shapesTabBar
+{
+  height: 25px;
+}
+#shapesArea
+{
+  background-color: #93C6E6;
+  border-radius: 3px;
+  width: 100%;
+  height: 50%;
+}
 .spacer
 {
   width: 1px;
@@ -274,6 +299,15 @@ input, textarea, select, button
   height: 50px;
   box-shadow: 0px 3px 2px #419AD3;
 }
+.tool
+{
+   width: 80%;
+   margin: 5%;
+   padding: 5%;
+   border-radius: 4px;
+   box-shadow: 5px 5px 3px #0D283A;
+   background-color: #419AD3;
+}
 .toolText
 {
    color: #E6F2F9;
@@ -287,14 +321,6 @@ input, textarea, select, button
    font-size: medium;
    padding: 10px 10px 80px 10px;
    margin: 5px 0;
-}
-#toolSpace
-{
-   width: 80%;
-   margin: 5%;
-   padding: 5%;
-   border-radius: 4px;
-   box-shadow: 5px 5px 3px #0D283A;
 }
 .warning
 {
